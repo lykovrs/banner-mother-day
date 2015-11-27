@@ -1,0 +1,276 @@
+
+<style>
+	html,body {
+		height: 100%;
+		position: relative;
+	}
+	@-webkit-keyframes slideInUp {
+		from {
+			-webkit-transform: translate3d(0, 100%, 0);
+			transform: translate3d(0, 100%, 0);
+			visibility: visible;
+		}
+
+		to {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	@keyframes slideInUp {
+		from {
+			-webkit-transform: translate3d(0, 100%, 0);
+			transform: translate3d(0, 100%, 0);
+			visibility: visible;
+		}
+
+		to {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	@-webkit-keyframes pulse {
+		from {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+
+		50% {
+			-webkit-transform: scale3d(1.04, 1.04, 1.04);
+			transform: scale3d(1.04, 1.04, 1.04);
+		}
+
+		to {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+	}
+
+	@keyframes pulse {
+		from {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+
+		50% {
+			-webkit-transform: scale3d(1.04, 1.04, 1.04);
+			transform: scale3d(1.04, 1.04, 1.04);
+		}
+
+		to {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+	}
+
+
+	@-webkit-keyframes swing {
+		20% {
+			-webkit-transform: rotate3d(0, 0, 2, 5deg);
+			transform: rotate3d(0, 0, 2, 5deg);
+		}
+
+		40% {
+			-webkit-transform: rotate3d(0, 0, 2, -10deg);
+			transform: rotate3d(0, 0, 2, -10deg);
+		}
+
+		60% {
+			-webkit-transform: rotate3d(0, 0, 2, 5deg);
+			transform: rotate3d(0, 0, 2, 5deg);
+		}
+
+		80% {
+			-webkit-transform: rotate3d(0, 0, 2, -5deg);
+			transform: rotate3d(0, 0, 2, -5deg);
+		}
+
+		to {
+			-webkit-transform: rotate3d(0, 0, 2, 0deg);
+			transform: rotate3d(0, 0, 2, 0deg);
+		}
+	}
+
+	@keyframes swing {
+		20% {
+			-webkit-transform: rotate3d(0, 0, 2, 5deg);
+			transform: rotate3d(0, 0, 2, 5deg);
+		}
+
+		40% {
+			-webkit-transform: rotate3d(0, 0, 2, -10deg);
+			transform: rotate3d(0, 0, 2, -10deg);
+		}
+
+		60% {
+			-webkit-transform: rotate3d(0, 0, 2, 5deg);
+			transform: rotate3d(0, 0, 2, 5deg);
+		}
+
+		80% {
+			-webkit-transform: rotate3d(0, 0, 2, -5deg);
+			transform: rotate3d(0, 0, 2, -5deg);
+		}
+
+		to {
+			-webkit-transform: rotate3d(0, 0, 2, 0deg);
+			transform: rotate3d(0, 0, 2, 0deg);
+		}
+	}
+
+
+	@keyframes slideOutRight {
+		from {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			visibility: hidden;
+			-webkit-transform: translate3d(600%, 0, 0);
+			transform: translate3d(600%, 0, 0);
+		}
+	}
+
+	.m-day {
+		z-index: 999;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		height: 75px;
+		overflow: hidden;
+	}
+
+	.m-day:hover {
+		overflow: visible;
+	}
+
+	.m-day__wrapper{
+		width: 100%;
+		min-width: 700px;
+		height: 60px;
+		margin: auto;
+		display: block;
+		margin-top: 15px;
+		background: #317218;
+	}
+
+	.m-day__inner {
+		position: relative;
+		width: 700px;
+		height: 60px;
+		margin: auto;
+		cursor: pointer;
+	}
+
+	.m-day__item {
+		position: absolute;
+		top: 0;
+		height: 0;
+	}
+
+	.m-day__item_product {
+		background: url("img/m-product.png") no-repeat;
+		width: 253px;
+		height: 299px;
+		left: 19px;
+		overflow: hidden;
+	}
+	.m-day__item_flowers {
+		background: url("img/m-flowers.png") no-repeat;
+		width: 388px;
+		height: 321px;
+		left: 40px;
+	}
+
+	.m-day__item_post {
+		background: url("img/m-post.png") no-repeat -44px 0;
+		width: 700px;
+		height: 299px;
+
+	}
+
+	.m-day__item_congratulation {
+		background: url("img/m-bg.png") no-repeat center;
+		height: 75px;
+		width: 700px;
+		top: -15px;
+	}
+
+	.m-day:hover .m-day__item_product {
+		-webkit-animation: slideInUp .9s;
+		animation: slideInUp .8s;
+		top: -199px;
+
+	}
+
+	.m-day:hover .m-day__item_flowers {
+		-webkit-animation: slideInUp .7s;
+		animation: slideInUp .8s;
+		top: -306px;
+	}
+
+	.m-day:hover .m-day__item_post {
+		-webkit-animation: slideInUp .8s;
+		animation: slideInUp .8s;
+		top: -284px;
+	}
+
+	.m-day__item_flower {
+		position: absolute;
+	}
+
+	.m-day__item_flower_left {
+		top: 64px;
+		left: 97px;
+		background: url("img/m-flower-1.png") no-repeat;
+		width: 98px;
+		height: 68px;
+		-webkit-animation: pulse 2s infinite;
+		animation: pulse 2s infinite;
+	}
+	.m-day__item_flower_right {
+		top: 45px;
+		left: 198px;
+		background: url("img/m-flower-2.png") no-repeat;
+		width: 76px;
+		height: 78px;
+		-webkit-transform-origin: bottom center;
+		transform-origin: bottom center;
+		-webkit-animation: swing 10s infinite;
+		animation: swing 10s infinite;
+	}
+
+	.m-day__item_grad {
+		width: 200px;
+		height: 200px;
+		left: -105px;
+		right: 105px;
+		position: absolute;
+		top: 50px;
+		background: url("img/m-product-gradient.png");
+		-webkit-animation: slideOutRight 3s infinite;
+		animation: slideOutRight 3s infinite;
+	}
+</style>
+
+<div class="m-day">
+	<a href="http://r.mail.ru/n213276331" target="_blank" class="m-day__wrapper">
+		<div class="m-day__inner">
+			<div class="m-day__item m-day__item_post"></div>
+			<div class="m-day__item m-day__item_flowers">
+				<div class="m-day__item_flower m-day__item_flower_left"></div>
+				<div class="m-day__item_flower m-day__item_flower_right"></div>
+			</div>
+			<div class="m-day__item m-day__item_product">
+				<div class="m-day__item_grad"></div>
+			</div>
+			<div class="m-day__item m-day__item_congratulation"></div>
+		</div>
+	</a>
+</div>
+
+
+
+
